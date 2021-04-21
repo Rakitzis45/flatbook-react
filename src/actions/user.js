@@ -1,7 +1,7 @@
-export const loginUser = (user, password) => {
+export const loginUser = (user, password, history) => {
     return (dispatch) => {
-        dispatch({type: "START_ADDING_USER_REQUEST"})
-        const url = "http://localhost:3000/users"
+        dispatch({ type: "START_ADDING_USER_REQUEST" })
+        const url = "http://localhost:3000/sessions"
         fetch(url, {
             method: 'POST',
             headers: {
@@ -13,5 +13,10 @@ export const loginUser = (user, password) => {
                 password: password
             })
         })
+            .then(resp => resp.json())
+            .then(user => {
+                dispatch({ type: "ADD_USER", payload: { user: user } })
+                history.push(`/users/${user.id}`)
+            })
     }
 }
