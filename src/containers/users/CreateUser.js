@@ -29,7 +29,7 @@ class CreateUser extends Component {
 
 function mapDispatchToProps(dispatch){
     return {
-        loginUser: (user, password) => dispatch(loginUser(user, password))
+        loginUser: (user, password, history) => dispatch(loginUser(user, password, history))
     }
 }
 
