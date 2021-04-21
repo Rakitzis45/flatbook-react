@@ -9,7 +9,7 @@ export default function reducer(state = { currentUser: {} }, action) {
         case "ADD_USER":
             return {
                 ...state,
-                user: action.user,
+                user: action.payload.user,
                 requesting: false
             }
         case "REMOVE_USER":
