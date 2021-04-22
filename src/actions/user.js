@@ -1,4 +1,4 @@
-export const loginUser = (user, password, history) => {
+export const loginUser = (user, history) => {
     return (dispatch) => {
         dispatch({ type: "START_ADDING_USER_REQUEST" })
         const url = "http://localhost:3000/sessions"
@@ -8,9 +8,9 @@ export const loginUser = (user, password, history) => {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
+            credentials: 'include',
             body: JSON.stringify({
-                email: user,
-                password: password
+                user: user
             })
         })
             .then(resp => resp.json())
