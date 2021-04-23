@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {loginUser} from '/home/rakitzis45/flatbook/flatbook-react/src/actions/user.js'
 import { withRouter } from 'react-router-dom';
 
-class CreateUser extends Component {
+class LoginUser extends Component {
     state = { 
         user: "",
         password: ""
@@ -40,4 +40,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(CreateUser))
+export default withRouter(connect(null, mapDispatchToProps)(LoginUser))
