@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {loginUser} from '/home/rakitzis45/flatbook/flatbook-react/src/actions/user.js'
+import {loginUser} from '../../actions/user'
 import { withRouter } from 'react-router-dom';
 
 class LoginUser extends Component {
