@@ -3,21 +3,24 @@ export default function reducer(state = { currentUser: {} }, action) {
         case "START_ADDING_USER_REQUEST":
             return {
                 ...state,
-                user: {},
+                currentUser: {},
                 requesting: true
             }
         case "ADD_USER":
             return {
                 ...state,
-                user: action.payload.user,
+                currentUser: action.payload.user,
                 requesting: false
             }
         case "REMOVE_USER":
             return {
                 ...state,
-                user: {}
+                currentUser: {}
             }
         default: 
-            return state;
+            return {...state};
     }
 }
+
+
+

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 class UserShow extends Component {
     render(){
+        // debugger
         return (
             <>
                 {this.props.user.email}
@@ -13,7 +14,7 @@ class UserShow extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user
+        user: state.currentUser
     }
 }
 
