@@ -43,10 +43,22 @@ export const signupUser = (user, history)=>{
                 history.push(`/users/${user.id}`)
             })
     }
+}
 
-
-
+export const checkLoggedIn = ()=>{
+    return (dispatch) =>{
+        const url = "http://localhost:3000/logged_in"
+        fetch(url,{
+            credentials: 'include'
+        }).then(resp => resp.json()).then(user=>{
+            // debugger
+            dispatch({ 
+                type: "ADD_USER",
+                payload: {user: user}
+             })
+        })
     }
+}
 
 
 
