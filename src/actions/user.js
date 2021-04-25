@@ -60,6 +60,20 @@ export const checkLoggedIn = ()=>{
     }
 }
 
+export const logout = (history)=>{
+    return(dispatch) =>{
+        const url = "http://localhost:3000/logout"
+        fetch(url, {
+            method: 'DELETE', 
+            credentials: 'include'
+        }).then(resp=>resp.json()).then(json =>{
+            dispatch({type: 'LOGOUT'})
+            history.push('/')
+        })
+
+    }
+}
+
 
 
 
