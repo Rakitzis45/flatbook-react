@@ -17,6 +17,11 @@ export default function reducer(state = { currentUser: {} }, action) {
                 ...state,
                 currentUser: {}
             }
+        case 'LOGOUT':
+            return{
+                ...state,
+                currentUser: {}
+            }
         default: 
             return {...state};
     }
