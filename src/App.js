@@ -7,6 +7,7 @@ import SignupUser from './containers/users/SignupUser'
 import {connect} from 'react-redux'
 import React from 'react';
 import {checkLoggedIn} from './actions/user'
+import NavBar from './containers/NavBar'
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
   render(){
   return (
     <Router>
+      <NavBar/>
       <div className="App">
         <Route exact path="/" component={LoginUser}/>
         <Route exact path="/users/:id" component={UserShow}/>
