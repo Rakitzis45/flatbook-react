@@ -4,8 +4,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LoginUser from './containers/users/LoginUser'
 import UserShow from './containers/users/UserShow'
 import SignupUser from './containers/users/SignupUser'
+import {connect} from 'react-redux'
+import React from 'react';
+import {checkLoggedIn} from './actions/user'
 
-function App() {
+class App extends React.Component {
+
+  componentDidMount(){
+    this.props.checkLoggedIn()
+  }
+
+  render(){
   return (
     <Router>
       <div className="App">
@@ -16,6 +25,13 @@ function App() {
     </Router>
     
   );
+  }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    checkLoggedIn: ()=>{dispatch(checkLoggedIn());}
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);
