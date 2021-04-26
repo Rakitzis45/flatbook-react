@@ -19,11 +19,12 @@ class NavBar extends React.Component {
                 <Navbar.Brand href="#home">Flatbook</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Profile</Nav.Link>
+                    <Nav.Link href={`/users/${this.props.loggedIn}`}>Profile</Nav.Link>
                     <Nav.Link href="#pricing">Projects</Nav.Link>
                     <Nav.Link href="#pricing">Groups</Nav.Link>
-                    
-                    {this.props.loggedIn ? <Nav.Link onClick={this.handleClick} href="#pricing">Logout</Nav.Link> : ""}
+    
+                    {this.props.loggedIn ? <Nav.Link onClick={this.handleClick} href="#pricing">Logout</Nav.Link> : <Nav.Link href="/">Login</Nav.Link>}
+                    {this.props.loggedIn ? "" : <Nav.Link href="/signup">Signup</Nav.Link>}
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
