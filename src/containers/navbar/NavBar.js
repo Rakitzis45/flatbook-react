@@ -22,7 +22,6 @@ class NavBar extends React.Component {
                     <Nav.Link href={`/users/${this.props.loggedIn}`}>Profile</Nav.Link>
                     <Nav.Link href="#pricing">Projects</Nav.Link>
                     <Nav.Link href="#pricing">Groups</Nav.Link>
-    
                     {this.props.loggedIn ? <Nav.Link onClick={this.handleClick} href="#pricing">Logout</Nav.Link> : <Nav.Link href="/">Login</Nav.Link>}
                     {this.props.loggedIn ? "" : <Nav.Link href="/signup">Signup</Nav.Link>}
                 </Nav>
