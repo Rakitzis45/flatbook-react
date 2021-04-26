@@ -7,7 +7,7 @@ import SignupUser from './containers/users/SignupUser'
 import {connect} from 'react-redux'
 import React from 'react';
 import {checkLoggedIn} from './actions/user'
-import NavBar from './containers/NavBar'
+import NavBar from './containers/navbar/NavBar'
 
 class App extends React.Component {
 
